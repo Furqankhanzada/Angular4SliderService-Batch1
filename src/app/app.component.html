@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <app-products></app-products>
+  <div class="slider-container">
+    <div class="slider" [style.transform]="sliderService.translateY">
+      <div class="slide" style="background: blue;"></div>
+      <div class="slide" style="background: green;"></div>
+      <div class="slide" style="background: orange;"></div>
+    </div>
+  </div>
+
+  <button (click)='sliderService.next()'>Next</button>
+
+</div>

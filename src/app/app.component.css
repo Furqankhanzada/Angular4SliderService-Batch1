@@ -1,0 +1,12 @@
+.slider-container{
+    width: 400px;
+    height: 100px;
+    overflow: hidden;
+}
+.slider{
+    transition: all 2s;
+}
+.slide{
+    width: 400px;
+    height: 100px;
+}
