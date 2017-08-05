@@ -6,12 +6,15 @@
   <app-products></app-products>
   <div class="slider-container">
     <div class="slider" [style.transform]="sliderService.translateY">
-      <div class="slide" style="background: blue;"></div>
-      <div class="slide" style="background: green;"></div>
-      <div class="slide" style="background: orange;"></div>
+      <div class="slide" [style.background]="slide.color" *ngFor="let slide of sliderService.slides" [class.active]="slide.active"></div>
     </div>
   </div>
 
+  <div class="dots">
+    <div class="dot" *ngFor="let slide of sliderService.slides" [class.activeDot]="slide.active" (click)="sliderService.go(slide)"></div>
+  </div>
+
+  <button (click)='sliderService.previous()'>Previous</button>
   <button (click)='sliderService.next()'>Next</button>
 
 </div>
