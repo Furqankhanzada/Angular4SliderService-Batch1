@@ -1,3 +1,7 @@
-<p>
-  products works!
-</p>
+<nav>
+  <ul>
+    <li *ngFor="let product of productsService.products">
+      <a [routerLink]="['/products', product._id]" routerLinkActive="active-route" >{{product.name}}</a>
+    </li>
+  </ul>
+</nav>

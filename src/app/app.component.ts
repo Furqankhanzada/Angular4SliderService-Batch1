@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SliderService } from './slider.service'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import { SliderService } from './slider.service'
 })
 export class AppComponent {
   title = 'app';
-  constructor(private sliderService: SliderService){
+  constructor(){
     
   }
 }

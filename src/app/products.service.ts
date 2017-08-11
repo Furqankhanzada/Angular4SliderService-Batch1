@@ -4,15 +4,18 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class ProductsService {
   products: any;
+  product: any;
   constructor(private http: HttpClient) {
     this.getProducts()
   }
   getProducts() {
-    console.log('getProducts called')
     this.http.get('https://gocleanlaundry.herokuapp.com/api/products').subscribe(products => {
-      // Read the result field from the JSON response.
-      console.log('products', products)
       this.products = products;
+    });
+  }
+  getProductByID(id) {
+    return this.http.get(`https://gocleanlaundry.herokuapp.com/api/products/${id}`).subscribe(product => {
+      this.product = product;
     });
   }
 }

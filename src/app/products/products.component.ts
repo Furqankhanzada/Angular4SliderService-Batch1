@@ -7,13 +7,6 @@ import { ProductsService } from './../products.service'
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
   constructor(private productsService: ProductsService) {}
-
-  ngOnInit() {
-    setTimeout(() => {
-          console.log('productsService ', this.productsService.products)
-    }, 1000)
-  }
-
+  ngOnInit() {}
 }
