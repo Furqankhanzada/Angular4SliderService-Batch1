@@ -4,6 +4,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import 'hammerjs';
+import {MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule} from '@angular/material';
+
 import { ProductsService } from './products.service'
 import { SliderService } from './slider.service'
 import { AppComponent } from './app.component';
@@ -35,7 +38,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MdButtonModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdGridListModule
   ],
   providers: [ProductsService, SliderService],
   bootstrap: [AppComponent]

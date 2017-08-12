@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './../products.service'
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,10 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.productsService.getProductByID(this.route.snapshot.params.id)
   }
 
+  goToHome(){
+    setTimeout(() => {
+          this.router.navigate(['/home'])
+    }, 5000)
+  }
 }

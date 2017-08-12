@@ -1,7 +1,15 @@
-<nav>
-  <ul>
-    <li *ngFor="let product of productsService.products">
-      <a [routerLink]="['/products', product._id]" routerLinkActive="active-route" >{{product.name}}</a>
-    </li>
-  </ul>
-</nav>
+<md-grid-list cols="3" rowHeight="2:2" gutterSize="10">
+  <md-grid-tile *ngFor="let product of productsService.products" [routerLink]="['/products', product._id]">
+    <md-card>
+      <md-card-header>
+        <md-card-title>{{product.name}}</md-card-title>
+      </md-card-header>
+      <img md-card-image [src]="'https://gocleanlaundry.herokuapp.com/api/images/' + product.image" />
+      <md-card-content>
+        <p>
+          {{product.description}}
+        </p>
+      </md-card-content>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
